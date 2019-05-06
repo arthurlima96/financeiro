@@ -1,11 +1,11 @@
-package com.br.uni.financeiro.principal;
+package principal;
 
 import java.net.MalformedURLException;
 import java.rmi.Naming;
 import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
 
-import com.br.uni.financeiro.servico.ServicoAlunosPendentes;
+import servico.ServicoAlunosPendentes;
 
 public class Principal {
 	 public static void main(String[] args) {

@@ -1,11 +1,18 @@
-package com.br.uni.financeiro.principal;
+package principal;
 
-public class Aluno {
+import java.io.Serializable;
+
+public class Aluno implements Serializable {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 5118780000228895440L;
 	private String nome;
 	private String cpf;
 	private int matricula;
 	private String curso;
+	private String mensalidade;
 	
 	public String getNome() {
 		return nome;
@@ -30,6 +37,12 @@ public class Aluno {
 	}
 	public void setCurso(String curso) {
 		this.curso = curso;
+	}
+	public String getMensalidade() {
+		return mensalidade;
+	}
+	public void setMensalidade(String mensalidade) {
+		this.mensalidade = mensalidade;
 	}
 	
 	

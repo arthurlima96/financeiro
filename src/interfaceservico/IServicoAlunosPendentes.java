@@ -1,10 +1,10 @@
-package com.br.uni.financeiro.interfaceservico;
+package interfaceservico;
 
 import java.rmi.Remote;
 import java.rmi.RemoteException;
 import java.util.List;
 
-import com.br.uni.financeiro.principal.Aluno;
+import principal.Aluno;
 
 public interface IServicoAlunosPendentes extends Remote{
 	

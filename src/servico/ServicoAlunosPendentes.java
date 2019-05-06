@@ -1,4 +1,4 @@
-package com.br.uni.financeiro.servico;
+package servico;
 
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
@@ -10,8 +10,8 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.br.uni.financeiro.interfaceservico.IServicoAlunosPendentes;
-import com.br.uni.financeiro.principal.Aluno;
+import interfaceservico.IServicoAlunosPendentes;
+import principal.Aluno;
 
 public class ServicoAlunosPendentes extends UnicastRemoteObject implements IServicoAlunosPendentes {
 	
@@ -58,16 +58,14 @@ public class ServicoAlunosPendentes extends UnicastRemoteObject implements IServ
 		         aluno.setNome( rs.getString("nome"));
 		         aluno.setCpf(rs.getString("cpf"));
 		         aluno.setMatricula(rs.getInt("matricula"));
-		         String curso = rs.getString("curso");
-		         String situacao = rs.getString("situacao");
+		         aluno.setCurso(rs.getString("curso"));
+		        
+		         StringBuilder mensalidade = new StringBuilder("Numero da Parcela: "+rs.getString("numero_parcela")+"º");
+		         mensalidade.append(" Data Vencimento: "+rs.getString("vencimento"));
+		         mensalidade.append(" Situação: "+rs.getString("situacao"));
+		         aluno.setMensalidade(mensalidade.toString());
 		         
 		         alunos.add(aluno);
-
-		         /*System.out.print("Nome: " + nome);
-		         System.out.print(", CPF: " + cpf);
-		         System.out.print(", Matricula: " + matricula);
-		         System.out.print(", Curso: " + curso);
-		         System.out.println(", Situcao: " + situacao);*/
 		      }
 		      rs.close();
 		      stmt.close();
