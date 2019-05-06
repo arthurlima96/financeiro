@@ -1,4 +1,4 @@
-package com.br.uni.financeiro;
+package com.br.uni.financeiro.principal;
 import java.sql.*;
 
 public class AlunosPendentes {
